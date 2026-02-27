@@ -1,7 +1,17 @@
 from functools import lru_cache
 from fastapi import Depends
+from app.datasources.context_json_datasource import ContextJsonDataSource
+from app.datasources.ride_route_json_datasource import RideRouteJsonDatasource
+from app.ports.context_repository_port import ContextRepositoryPort
+from app.ports.location_repository_port import LocationRepositoryPort
+from app.ports.ride_route_repository_port import RideRouteRepositoryPort
+from app.services.exploration_service import ExplorationService
 from app.services.health_service import HealthService
 from app.adapters.in_memory_health_repository import InMemoryHealthRepository
+from app.adapters.ride_route_repository_adapter import RideRouteRepositoryAdapter
+from app.adapters.context_repository_adapter import ContextRepositoryAdapter
+from app.adapters.location_repository_adapter import LocationRepositoryAdapter
+from app.datasources.location_json_datasource import LocationJsonDatasource
 
 
 def get_health_repository():
@@ -10,3 +20,41 @@ def get_health_repository():
 def get_health_service() -> HealthService:
     repository = get_health_repository()
     return HealthService(repository)
+
+@lru_cache
+def get_location_datasource():
+    return LocationJsonDatasource(file_path="app/datasources/locations.json")
+
+def get_location_repository(
+    datasource: LocationJsonDatasource = Depends(get_location_datasource),
+) -> LocationRepositoryPort:
+    return LocationRepositoryAdapter(datasource)
+
+@lru_cache
+def get_ride_route_datasource():
+    return RideRouteJsonDatasource(file_path="app/datasources/ride_routes.json")
+
+def get_ride_route_repository(
+    datasource: RideRouteJsonDatasource = Depends(get_ride_route_datasource),
+) -> RideRouteRepositoryPort:
+    return RideRouteRepositoryAdapter(datasource)
+
+@lru_cache
+def get_context_datasource():
+    return ContextJsonDataSource(file_path="app/datasources/context.json")
+
+def get_context_repository(
+    datasource: ContextJsonDataSource = Depends(get_context_datasource),
+) -> ContextRepositoryPort:
+    return ContextRepositoryAdapter(datasource)
+
+def get_exploration_service(
+    location_repository: LocationRepositoryPort = Depends(get_location_repository),
+    ride_route_repository: RideRouteRepositoryPort = Depends(get_ride_route_repository),
+    context_repository: ContextRepositoryPort = Depends(get_context_repository),
+):
+    return ExplorationService(
+        location_repo=location_repository,
+        route_repo=ride_route_repository,
+        context_repo=context_repository,
+    )

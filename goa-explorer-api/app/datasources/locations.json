@@ -1,0 +1,68 @@
+[
+  {
+    "id": "loc_001",
+    "name": "Baga Beach",
+    "region": "north",
+    "type": "beach",
+    "vibe": ["party", "mixed"],
+    "best_time_of_day": ["afternoon", "sunset", "night"],
+    "crowd_level_weekday": "medium",
+    "crowd_level_weekend": "high",
+    "short_description": "Energetic beach known for nightlife and water sports."
+  },
+  {
+    "id": "loc_002",
+    "name": "Vagator Beach",
+    "region": "north",
+    "type": "beach",
+    "vibe": ["romantic", "mixed"],
+    "best_time_of_day": ["sunset"],
+    "crowd_level_weekday": "low",
+    "crowd_level_weekend": "medium",
+    "short_description": "Cliffside beach offering dramatic sunset views."
+  },
+  {
+    "id": "loc_003",
+    "name": "Chapora Fort",
+    "region": "north",
+    "type": "fort",
+    "vibe": ["romantic"],
+    "best_time_of_day": ["sunset", "morning"],
+    "crowd_level_weekday": "low",
+    "crowd_level_weekend": "medium",
+    "short_description": "Historic fort overlooking the Arabian Sea."
+  },
+  {
+    "id": "loc_004",
+    "name": "Palolem Beach",
+    "region": "south",
+    "type": "beach",
+    "vibe": ["quiet", "romantic"],
+    "best_time_of_day": ["morning", "sunset"],
+    "crowd_level_weekday": "low",
+    "crowd_level_weekend": "medium",
+    "short_description": "Peaceful crescent-shaped beach ideal for couples."
+  },
+  {
+    "id": "loc_005",
+    "name": "Cola Beach",
+    "region": "south",
+    "type": "scenic",
+    "vibe": ["quiet"],
+    "best_time_of_day": ["morning", "sunset"],
+    "crowd_level_weekday": "low",
+    "crowd_level_weekend": "low",
+    "short_description": "Hidden lagoon beach with serene surroundings."
+  },
+  {
+    "id": "loc_006",
+    "name": "Fontainhas",
+    "region": "north",
+    "type": "village",
+    "vibe": ["romantic", "quiet"],
+    "best_time_of_day": ["morning", "afternoon"],
+    "crowd_level_weekday": "low",
+    "crowd_level_weekend": "medium",
+    "short_description": "Colorful Latin quarter known for heritage charm."
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "rr1",
+    "name": "Panaji to Dona Paula Coastal Ride",
+    "start_location": "Panaji",
+    "end_location": "Dona Paula",
+    "distance_km": 8,
+    "difficulty": "easy",
+    "road_type": "coastal",
+    "surface": "asphalt",
+    "traffic_level": "medium",
+    "highlights": ["Miramar Beach", "Sunset Point"]
+  },
+  {
+    "id": "rr2",
+    "name": "Mapusa to Arambol Scenic Route",
+    "start_location": "Mapusa",
+    "end_location": "Arambol",
+    "distance_km": 22,
+    "difficulty": "moderate",
+    "road_type": "village",
+    "surface": "asphalt",
+    "traffic_level": "low",
+    "highlights": ["Arambol Beach", "Sweet Water Lake"]
+  },
+  {
+    "id": "rr3",
+    "name": "Ponda Ghat Challenge",
+    "start_location": "Ponda",
+    "end_location": "Mollem",
+    "distance_km": 35,
+    "difficulty": "hard",
+    "road_type": "ghat",
+    "surface": "mixed",
+    "traffic_level": "low",
+    "highlights": ["Western Ghats", "Forest Stretch"]
+  },
+  {
+    "id": "rr4",
+    "name": "Baga to Anjuna Party Loop",
+    "start_location": "Baga",
+    "end_location": "Anjuna",
+    "distance_km": 12,
+    "difficulty": "easy",
+    "road_type": "city",
+    "surface": "asphalt",
+    "traffic_level": "high",
+    "highlights": ["Baga Beach", "Anjuna Flea Market"]
+  }
+]

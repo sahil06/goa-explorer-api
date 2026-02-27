@@ -1,0 +1,16 @@
+[
+  {
+    "location_id": "loc1",
+    "day_type": "weekday",
+    "time_of_day": "morning",
+    "crowd_level": "low",
+    "recommendation": "Perfect time for a peaceful visit."
+  },
+  {
+    "location_id": "loc1",
+    "day_type": "weekend",
+    "time_of_day": "evening",
+    "crowd_level": "high",
+    "recommendation": "Expect heavy crowd. Arrive early."
+  }
+]
