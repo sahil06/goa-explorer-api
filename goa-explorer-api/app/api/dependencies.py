@@ -5,10 +5,12 @@ from app.datasources.context_json_datasource import ContextJsonDataSource
 from app.datasources.ride_route_json_datasource import RideRouteJsonDatasource
 from app.parsers.mood_experience_parser import MoodExperienceParser
 from app.parsers.ride_plan_parser import RidePlanParser
+from app.parsers.sunset_recommendation_parser import SunsetRecommendationParser
 from app.ports.context_repository_port import ContextRepositoryPort
 from app.ports.llm_port import LLMPort
 from app.ports.location_repository_port import LocationRepositoryPort
 from app.ports.ride_route_repository_port import RideRouteRepositoryPort
+from app.prompts.best_sunset_prompt_builder import BestSunsetPromptBuilder
 from app.prompts.mood_experience_prompt_builder import MoodExperiencePromptBuilder
 from app.prompts.ride_planning_prompt_builder import RidePlanningPromptBuilder
 from app.services.experience_service import ExperienceService
@@ -81,7 +83,18 @@ def get_ride_planning_service(
 def get_experience_service(
     llm: LLMPort = Depends(get_llm),
 ) -> ExperienceService:
-    prompt_builder = MoodExperiencePromptBuilder()
-    parser = MoodExperienceParser()
-    return ExperienceService(llm, prompt_builder, parser)
+
+    mood_prompt = MoodExperiencePromptBuilder()
+    mood_parser = MoodExperienceParser()
+
+    sunset_prompt = BestSunsetPromptBuilder()
+    sunset_parser = SunsetRecommendationParser()
+
+    return ExperienceService(
+        llm=llm,
+        mood_prompt_builder=mood_prompt,
+        mood_parser=mood_parser,
+        sunset_prompt_builder=sunset_prompt,
+        sunset_parser=sunset_parser,
+    )
 
