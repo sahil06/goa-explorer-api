@@ -1,10 +1,10 @@
 from app.core.exceptions import NotFoundException
-from app.domain.entities.context_info import ContextInfo
+from app.domain.enums.time_of_day import TimeOfDay
+from app.domain.models.context_info import ContextInfo
+from app.domain.requests.context_request import ContextRequest
 from app.ports.context_repository_port import ContextRepositoryPort
-from app.queries.context_query import ContextQuery
 from app.datasources.context_json_datasource import ContextJsonDataSource
-from app.domain.enums import (
-    TimeOfDay,
+from app.domain.enums.enums import (
     DayType,        
 )
 
@@ -14,7 +14,7 @@ class ContextRepositoryAdapter(ContextRepositoryPort):
     def __init__(self, datasource: ContextJsonDataSource):
         self.datasource = datasource
 
-    def get_context(self, query: ContextQuery) -> ContextInfo:
+    def get_context(self, query: ContextRequest) -> ContextInfo:
         raw_data = self.datasource.fetch_all()
 
         for item in raw_data:

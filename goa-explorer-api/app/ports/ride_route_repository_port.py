@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
-from app.domain.entities.ride_route import RideRoute
-from app.adapters.filters.ride_route_filter import RideRouteFilter
+from app.domain.models.ride_route import RideRoute
+from app.domain.requests.ride_route_filter import RideRouteFilter
 
 
 class RideRouteRepositoryPort(ABC):

@@ -1,14 +1,14 @@
 from typing import List
+from app.domain.enums.time_of_day import TimeOfDay
 from app.ports.location_repository_port import LocationRepositoryPort
-from app.domain.entities.location import Location
-from app.domain.enums import (
+from app.domain.models.location import Location
+from app.domain.enums.enums import (
     Region,
     LocationType,
     Vibe,
-    TimeOfDay,
     CrowdLevel,
 )
-from app.adapters.filters.location_filter import LocationFilter
+from app.domain.requests.location_filter import LocationFilter
 from app.datasources.location_json_datasource import LocationJsonDatasource
 
 

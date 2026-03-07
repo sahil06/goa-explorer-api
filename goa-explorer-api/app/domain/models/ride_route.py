@@ -1,10 +1,9 @@
-from dataclasses import dataclass
 from typing import List
-from app.domain.enums import RouteDifficulty, RoadType, SurfaceType, TrafficLevel
+from pydantic import BaseModel
+from app.domain.enums.enums import RouteDifficulty, RoadType, SurfaceType, TrafficLevel
 
 
-@dataclass
-class RideRoute:
+class RideRoute(BaseModel):
     id: str
     name: str
     start_location: str

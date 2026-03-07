@@ -2,7 +2,7 @@
 from app.ports.location_repository_port import LocationRepositoryPort
 from app.ports.ride_route_repository_port import RideRouteRepositoryPort
 from app.ports.context_repository_port import ContextRepositoryPort
-from app.adapters.filters.location_filter import LocationFilter
+from app.domain.requests.location_filter import LocationFilter
 
 
 class ExplorationService:

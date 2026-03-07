@@ -1,5 +1,5 @@
-from app.domain.entities.location import Location
-from app.api.schemas.location_response import (
+from app.domain.models.location import Location
+from app.api.schemas.responses.location_response import (
     LocationResponse,
     LocationListResponse,
 )

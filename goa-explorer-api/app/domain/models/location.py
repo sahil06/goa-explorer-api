@@ -1,10 +1,10 @@
-from dataclasses import dataclass
 from typing import List
-from app.domain.enums import Region, LocationType, Vibe, TimeOfDay, CrowdLevel
+from pydantic import BaseModel
+from app.domain.enums.enums import Region, LocationType, Vibe, CrowdLevel
+from app.domain.enums.time_of_day import TimeOfDay
 
 
-@dataclass
-class Location:
+class Location(BaseModel):
     id: str
     name: str
     region: Region

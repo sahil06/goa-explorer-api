@@ -1,10 +1,14 @@
 from functools import lru_cache
 from fastapi import Depends
+from app.adapters.ollama_llm_adapter import OllamaLLMAdapter
 from app.datasources.context_json_datasource import ContextJsonDataSource
 from app.datasources.ride_route_json_datasource import RideRouteJsonDatasource
+from app.parsers.ride_plan_parser import RidePlanParser
 from app.ports.context_repository_port import ContextRepositoryPort
+from app.ports.llm_port import LLMPort
 from app.ports.location_repository_port import LocationRepositoryPort
 from app.ports.ride_route_repository_port import RideRouteRepositoryPort
+from app.prompts.ride_planning_prompt_builder import RidePlanningPromptBuilder
 from app.services.exploration_service import ExplorationService
 from app.services.health_service import HealthService
 from app.adapters.in_memory_health_repository import InMemoryHealthRepository
@@ -12,6 +16,7 @@ from app.adapters.ride_route_repository_adapter import RideRouteRepositoryAdapte
 from app.adapters.context_repository_adapter import ContextRepositoryAdapter
 from app.adapters.location_repository_adapter import LocationRepositoryAdapter
 from app.datasources.location_json_datasource import LocationJsonDatasource
+from app.services.ride_planning_service import RidePlanningService
 
 
 def get_health_repository():
@@ -58,3 +63,15 @@ def get_exploration_service(
         route_repo=ride_route_repository,
         context_repo=context_repository,
     )
+
+@lru_cache()
+def get_llm() -> LLMPort:
+    return OllamaLLMAdapter(model="llama3")
+
+def get_ride_planning_service(
+    llm: LLMPort = Depends(get_llm),
+) -> RidePlanningService:
+    prompt_builder = RidePlanningPromptBuilder()
+    parser = RidePlanParser()
+    return RidePlanningService(llm, prompt_builder, parser)
+

@@ -1,5 +1,5 @@
-from app.domain.entities.context_info import ContextInfo
-from app.api.schemas.context_response import (
+from app.domain.models.context_info import ContextInfo
+from app.api.schemas.responses.context_response import (
     ContextResponse,
     ContextInfoResponse,
 )

@@ -20,13 +20,6 @@ class Vibe(str, Enum):
     mixed = "mixed"
 
 
-class TimeOfDay(str, Enum):
-    morning = "morning"
-    afternoon = "afternoon"
-    sunset = "sunset"
-    night = "night"
-
-
 class CrowdLevel(str, Enum):
     low = "low"
     medium = "medium"

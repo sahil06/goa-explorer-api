@@ -1,5 +1,5 @@
-from app.domain.entities.ride_route import RideRoute
-from app.api.schemas.ride_route_response import RideRouteListResponse, RideRouteResponse
+from app.domain.models.ride_route import RideRoute
+from app.api.schemas.responses.ride_route_response import RideRouteListResponse, RideRouteResponse
 
 
 class RideRouteMapper:

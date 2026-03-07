@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from typing import Optional
 
-from app.domain.enums import RoadType, RouteDifficulty, SurfaceType, TrafficLevel
+from app.domain.enums.enums import RoadType, RouteDifficulty, SurfaceType, TrafficLevel
 
 class RideRouteFilter(BaseModel):
     difficulty: Optional[RouteDifficulty] = None

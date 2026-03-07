@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, Query
 from typing import List, Optional
 
-from app.api.schemas.ride_route_response import RideRouteListResponse
+from app.api.schemas.responses.ride_route_response import RideRouteListResponse
 from app.mappers.ride_route_mapper import RideRouteMapper
 from app.services.exploration_service import ExplorationService
-from app.adapters.filters.ride_route_filter import RideRouteFilter
-from app.domain.enums import (
+from app.domain.requests.ride_route_filter import RideRouteFilter
+from app.domain.enums.enums import (
     RouteDifficulty,
     RoadType,
     SurfaceType,

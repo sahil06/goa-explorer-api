@@ -1,9 +1,8 @@
-from dataclasses import dataclass
 from typing import Dict
+from pydantic import BaseModel
 
 
-@dataclass
-class HealthStatus:
+class HealthStatus(BaseModel):
     service: str
     status: str
     details: Dict[str, str]

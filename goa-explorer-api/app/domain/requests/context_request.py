@@ -1,5 +1,6 @@
 from pydantic import BaseModel
-from app.domain.enums import DayType, TimeOfDay
+from app.domain.enums.enums import DayType
+from app.domain.enums.time_of_day import TimeOfDay
 
 
 class ContextRequest(BaseModel):
