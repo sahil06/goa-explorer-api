@@ -3,6 +3,7 @@ from fastapi import Depends
 from app.adapters.ollama_llm_adapter import OllamaLLMAdapter
 from app.datasources.context_json_datasource import ContextJsonDataSource
 from app.datasources.ride_route_json_datasource import RideRouteJsonDatasource
+from app.parsers.goa_personality_parser import GoaPersonalityParser
 from app.parsers.mood_experience_parser import MoodExperienceParser
 from app.parsers.ride_plan_parser import RidePlanParser
 from app.parsers.sunset_recommendation_parser import SunsetRecommendationParser
@@ -12,6 +13,7 @@ from app.ports.location_repository_port import LocationRepositoryPort
 from app.ports.ride_route_repository_port import RideRouteRepositoryPort
 from app.prompts.ask_goa_prompt_builder import AskGoaPromptBuilder
 from app.prompts.best_sunset_prompt_builder import BestSunsetPromptBuilder
+from app.prompts.goa_personality_prompt_builder import GoaPersonalityPromptBuilder
 from app.prompts.mood_experience_prompt_builder import MoodExperiencePromptBuilder
 from app.prompts.ride_planning_prompt_builder import RidePlanningPromptBuilder
 from app.services.ask_goa_service import AskGoaService
@@ -23,6 +25,7 @@ from app.adapters.ride_route_repository_adapter import RideRouteRepositoryAdapte
 from app.adapters.context_repository_adapter import ContextRepositoryAdapter
 from app.adapters.location_repository_adapter import LocationRepositoryAdapter
 from app.datasources.location_json_datasource import LocationJsonDatasource
+from app.services.personality_service import PersonalityService
 from app.services.ride_planning_service import RidePlanningService
 
 
@@ -106,5 +109,14 @@ def get_ask_goa_service(
     return AskGoaService(
         llm,
         AskGoaPromptBuilder(),
+    )
+
+def get_personality_service(
+    llm: LLMPort = Depends(get_llm),
+) -> PersonalityService:
+    return PersonalityService(
+        llm,
+        GoaPersonalityPromptBuilder(),
+        GoaPersonalityParser(),
     )
 
