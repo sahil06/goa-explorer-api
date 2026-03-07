@@ -3,12 +3,15 @@ from fastapi import Depends
 from app.adapters.ollama_llm_adapter import OllamaLLMAdapter
 from app.datasources.context_json_datasource import ContextJsonDataSource
 from app.datasources.ride_route_json_datasource import RideRouteJsonDatasource
+from app.parsers.mood_experience_parser import MoodExperienceParser
 from app.parsers.ride_plan_parser import RidePlanParser
 from app.ports.context_repository_port import ContextRepositoryPort
 from app.ports.llm_port import LLMPort
 from app.ports.location_repository_port import LocationRepositoryPort
 from app.ports.ride_route_repository_port import RideRouteRepositoryPort
+from app.prompts.mood_experience_prompt_builder import MoodExperiencePromptBuilder
 from app.prompts.ride_planning_prompt_builder import RidePlanningPromptBuilder
+from app.services.experience_service import ExperienceService
 from app.services.exploration_service import ExplorationService
 from app.services.health_service import HealthService
 from app.adapters.in_memory_health_repository import InMemoryHealthRepository
@@ -74,4 +77,11 @@ def get_ride_planning_service(
     prompt_builder = RidePlanningPromptBuilder()
     parser = RidePlanParser()
     return RidePlanningService(llm, prompt_builder, parser)
+
+def get_experience_service(
+    llm: LLMPort = Depends(get_llm),
+) -> ExperienceService:
+    prompt_builder = MoodExperiencePromptBuilder()
+    parser = MoodExperienceParser()
+    return ExperienceService(llm, prompt_builder, parser)
 
