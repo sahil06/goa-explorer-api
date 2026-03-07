@@ -3,7 +3,6 @@ from fastapi import Depends
 from app.adapters.ollama_llm_adapter import OllamaLLMAdapter
 from app.datasources.context_json_datasource import ContextJsonDataSource
 from app.datasources.ride_route_json_datasource import RideRouteJsonDatasource
-from app.parsers.ask_goa_parser import AskGoaParser
 from app.parsers.mood_experience_parser import MoodExperienceParser
 from app.parsers.ride_plan_parser import RidePlanParser
 from app.parsers.sunset_recommendation_parser import SunsetRecommendationParser
@@ -107,6 +106,5 @@ def get_ask_goa_service(
     return AskGoaService(
         llm,
         AskGoaPromptBuilder(),
-        AskGoaParser(),
     )
 
