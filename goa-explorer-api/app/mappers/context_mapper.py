@@ -1,0 +1,14 @@
+from app.domain.models.context_info import ContextInfo
+from app.api.schemas.responses.context_response import (
+    ContextResponse,
+    ContextInfoResponse,
+)
+
+
+class ContextMapper:
+
+    @staticmethod
+    def to_response(entity: ContextInfo) -> ContextInfoResponse:
+        return ContextInfoResponse(
+            data=ContextResponse.model_validate(entity)
+        )
