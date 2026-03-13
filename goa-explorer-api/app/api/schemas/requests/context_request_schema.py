@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from app.domain.enums.enums import DayType
+from app.domain.enums.day_type import DayType
 from app.domain.enums.time_of_day import TimeOfDay
 
 

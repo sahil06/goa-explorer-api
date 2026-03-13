@@ -1,6 +1,8 @@
 from pydantic import BaseModel
 from typing import Optional
-from app.domain.enums.enums import Region, LocationType, Vibe
+from app.domain.enums.location_type import LocationType
+from app.domain.enums.region import Region
+from app.domain.enums.vibe import Vibe
 
 
 class LocationFilter(BaseModel):

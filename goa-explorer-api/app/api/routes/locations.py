@@ -1,7 +1,9 @@
 from fastapi import APIRouter, Depends
 from typing import Optional
 from app.api.schemas.responses.location_response import LocationListResponse
-from app.domain.enums.enums import Region, LocationType, Vibe
+from app.domain.enums.location_type import LocationType
+from app.domain.enums.region import Region
+from app.domain.enums.vibe import Vibe
 from app.domain.requests.location_filter import LocationFilter
 from app.mappers.location_mapper import LocationMapper
 from app.services.exploration_service import ExplorationService

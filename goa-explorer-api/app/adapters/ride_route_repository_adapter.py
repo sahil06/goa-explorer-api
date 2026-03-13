@@ -1,13 +1,11 @@
 from typing import List
+from app.domain.enums.road_type import RoadType
+from app.domain.enums.route_difficulty import RouteDifficulty
+from app.domain.enums.surface_type import SurfaceType
+from app.domain.enums.traffic_level import TrafficLevel
 from app.domain.models.ride_route import RideRoute
 from app.ports.ride_route_repository_port import RideRouteRepositoryPort
 from app.domain.requests.ride_route_filter import RideRouteFilter
-from app.domain.enums.enums import (
-    RouteDifficulty,
-    RoadType,
-    SurfaceType,
-    TrafficLevel,
-)
 from app.datasources.ride_route_json_datasource import RideRouteJsonDatasource
 
 
