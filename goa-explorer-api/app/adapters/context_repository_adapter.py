@@ -1,12 +1,10 @@
 from app.core.exceptions import NotFoundException
 from app.domain.enums.time_of_day import TimeOfDay
-from app.domain.models.context_info import ContextInfo
+from app.domain.enums.day_type import DayType
+from app.domain.entities.context_info import ContextInfo
 from app.domain.requests.context_request import ContextRequest
 from app.ports.context_repository_port import ContextRepositoryPort
 from app.datasources.context_json_datasource import ContextJsonDataSource
-from app.domain.enums.enums import (
-    DayType,        
-)
 
 
 class ContextRepositoryAdapter(ContextRepositoryPort):

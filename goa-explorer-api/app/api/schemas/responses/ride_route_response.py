@@ -1,6 +1,9 @@
 from pydantic import BaseModel
 from typing import List
-from app.domain.enums.enums import RouteDifficulty, RoadType, SurfaceType, TrafficLevel
+from app.domain.enums.road_type import RoadType
+from app.domain.enums.route_difficulty import RouteDifficulty
+from app.domain.enums.surface_type import SurfaceType
+from app.domain.enums.traffic_level import TrafficLevel
 
 
 class RideRouteResponse(BaseModel):

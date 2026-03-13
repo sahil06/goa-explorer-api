@@ -1,5 +1,5 @@
 import json
-from app.domain.models.sunset_recommendation import SunsetRecommendation
+from app.domain.entities.sunset_recommendation import SunsetRecommendation
 
 
 class SunsetRecommendationParser:

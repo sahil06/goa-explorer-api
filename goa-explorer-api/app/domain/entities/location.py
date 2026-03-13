@@ -1,7 +1,10 @@
 from typing import List
 from pydantic import BaseModel
-from app.domain.enums.enums import Region, LocationType, Vibe, CrowdLevel
+from app.domain.enums.crowd_level import CrowdLevel
+from app.domain.enums.location_type import LocationType
+from app.domain.enums.region import Region
 from app.domain.enums.time_of_day import TimeOfDay
+from app.domain.enums.vibe import Vibe
 
 
 class Location(BaseModel):

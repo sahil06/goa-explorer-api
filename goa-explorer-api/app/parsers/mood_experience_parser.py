@@ -1,5 +1,5 @@
 import json
-from app.domain.models.mood_experience import MoodExperience
+from app.domain.entities.mood_experience import MoodExperience
 
 
 class MoodExperienceParser:

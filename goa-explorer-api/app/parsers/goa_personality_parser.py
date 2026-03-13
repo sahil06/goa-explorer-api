@@ -1,5 +1,5 @@
 import json
-from app.domain.models.goa_personality import GoaPersonality
+from app.domain.entities.goa_personality import GoaPersonality
 
 
 class GoaPersonalityParser:

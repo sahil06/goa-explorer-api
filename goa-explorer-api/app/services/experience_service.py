@@ -1,10 +1,10 @@
-from app.domain.models.sunset_recommendation import SunsetRecommendation
+from app.domain.entities.sunset_recommendation import SunsetRecommendation
 from app.domain.requests.best_sunset_request import BestSunsetRequest
 from app.parsers.mood_experience_parser import MoodExperienceParser
 from app.parsers.sunset_recommendation_parser import SunsetRecommendationParser
 from app.ports.llm_port import LLMPort
 from app.domain.requests.mood_experience_request import MoodExperienceRequest
-from app.domain.models.mood_experience import MoodExperience
+from app.domain.entities.mood_experience import MoodExperience
 from app.prompts.best_sunset_prompt_builder import BestSunsetPromptBuilder
 from app.prompts.mood_experience_prompt_builder import MoodExperiencePromptBuilder
 

@@ -1,7 +1,7 @@
 from app.api.schemas.requests.mood_experience_request_schema import MoodExperienceRequestSchema
 from app.api.schemas.responses.mood_experience_response import MoodExperienceResponse
 from app.domain.requests.mood_experience_request import MoodExperienceRequest
-from app.domain.models.mood_experience import MoodExperience
+from app.domain.entities.mood_experience import MoodExperience
 
 
 class MoodExperienceMapper:

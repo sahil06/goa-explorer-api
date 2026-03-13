@@ -1,7 +1,5 @@
 from pydantic import BaseModel
 from typing import List
-from app.domain.enums.enums import DayType, CrowdLevel
-
 
 class RideResponse(BaseModel):
     stops: List[str]

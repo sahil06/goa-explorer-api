@@ -1,7 +1,7 @@
 from app.api.schemas.requests.best_sunset_request_schema import BestSunsetRequestSchema
 from app.api.schemas.responses.sunset_recommendation_response import SunsetRecommendationResponse
 from app.domain.requests.best_sunset_request import BestSunsetRequest
-from app.domain.models.sunset_recommendation import SunsetRecommendation
+from app.domain.entities.sunset_recommendation import SunsetRecommendation
 
 
 class SunsetRecommendationMapper:
