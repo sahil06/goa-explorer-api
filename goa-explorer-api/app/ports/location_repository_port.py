@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List
-from app.domain.models.location import Location
+from app.domain.entities.location import Location
 from app.domain.requests.location_filter import LocationFilter
 
 

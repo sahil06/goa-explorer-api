@@ -1,6 +1,6 @@
 import json
 import re
-from app.domain.models.ride_plan import RidePlan
+from app.domain.entities.ride_plan import RidePlan
 
 
 class RidePlanParser:

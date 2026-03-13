@@ -5,7 +5,7 @@ from app.domain.enums.region import Region
 from app.domain.enums.time_of_day import TimeOfDay
 from app.domain.enums.vibe import Vibe
 from app.ports.location_repository_port import LocationRepositoryPort
-from app.domain.models.location import Location
+from app.domain.entities.location import Location
 from app.domain.requests.location_filter import LocationFilter
 from app.datasources.location_json_datasource import LocationJsonDatasource
 

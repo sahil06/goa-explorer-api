@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from app.domain.models.context_info import ContextInfo
+from app.domain.entities.context_info import ContextInfo
 from app.domain.requests.context_request import ContextRequest
 
 

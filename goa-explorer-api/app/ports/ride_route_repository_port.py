@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List
-from app.domain.models.ride_route import RideRoute
+from app.domain.entities.ride_route import RideRoute
 from app.domain.requests.ride_route_filter import RideRouteFilter
 
 

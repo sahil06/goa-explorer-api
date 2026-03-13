@@ -1,7 +1,7 @@
 from app.api.schemas.requests.plan_ride_request_schema import PlanRideRequestSchema
 from app.api.schemas.responses.ride_plan_response import RidePlanResponse, RideResponse
 from app.domain.requests.plan_ride_request import PlanRideRequest
-from app.domain.models.ride_plan import RidePlan
+from app.domain.entities.ride_plan import RidePlan
 
 
 class RidePlanMapper:

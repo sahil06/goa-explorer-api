@@ -1,4 +1,4 @@
-from app.domain.models.ride_plan import RidePlan
+from app.domain.entities.ride_plan import RidePlan
 from app.domain.requests.plan_ride_request import PlanRideRequest
 from app.parsers.ride_plan_parser import RidePlanParser
 from app.ports.llm_port import LLMPort

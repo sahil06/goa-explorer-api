@@ -1,5 +1,5 @@
 from app.core.config import settings
-from app.domain.models.health_status import HealthStatus
+from app.domain.entities.health_status import HealthStatus
 from app.ports.health_repository_port import HealthRepositoryPort
 from app.core.logger import get_logger
 

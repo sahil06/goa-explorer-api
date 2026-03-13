@@ -1,8 +1,10 @@
-from app.domain.models.location import Location
+from app.api.schemas.requests.location_request_schema import LocationRequestSchema
+from app.domain.entities.location import Location
 from app.api.schemas.responses.location_response import (
     LocationResponse,
     LocationListResponse,
 )
+from app.domain.requests.location_filter import LocationFilter
 
 
 class LocationMapper:

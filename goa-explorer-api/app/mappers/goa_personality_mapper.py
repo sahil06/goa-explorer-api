@@ -1,7 +1,7 @@
 from app.api.schemas.requests.goa_personality_request_schema import GoaPersonalityRequestSchema
 from app.api.schemas.responses.goa_personality_response import GoaPersonalityResponse
 from app.domain.requests.goa_personality_request import GoaPersonalityRequest
-from app.domain.models.goa_personality import GoaPersonality
+from app.domain.entities.goa_personality import GoaPersonality
 
 
 class GoaPersonalityMapper:
